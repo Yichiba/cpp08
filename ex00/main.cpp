@@ -1,8 +1,7 @@
-#include <iostream>
-#include <vector>
 #include "easyfind.hpp"
 
-int main() {
+int main() 
+{
     try {
         std::vector<int> myVector ;
         myVector.push_back(11);
@@ -15,9 +14,10 @@ int main() {
         if (result != myVector.end())
             std::cout << "Element found: " << *result << std::endl;
         else
-            throw   ElementNotFound();
+            throw ElementNotFound();
     }
-    catch (std::exception& e){
+    catch (std::exception& e)
+    {
         std::cout << e.what();
     }
     return 0;

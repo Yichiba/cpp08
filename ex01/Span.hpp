@@ -11,13 +11,14 @@ class Span{
     public:
         Span();
         Span( unsigned int n);
-        Span(Span& old);
-        Span& operator=(Span& other);
+        Span(const Span & old);
+        Span& operator=(const Span& other);
         ~Span();
-        void    addNumber(int n);
+        void    addNumber(int num);
+        void    improvedAddNumber(std::vector<int>::iterator begin,std::vector<int>::iterator end);
         int     shortestSpan();
         int     longestSpan();
-        std::vector<int>&   getsp();
+        const std::vector<int>&   getsp() const ;
         int   getN();
 
         class SpanIsFull : public std::exception{
@@ -27,7 +28,4 @@ class Span{
                 }
         };
 };
- 
-std::ostream& operator<<(std::ostream& os,Span& sp);
-
 #endif
